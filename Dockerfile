@@ -1,6 +1,6 @@
 # Build a Docker image with Node.js, Google Cloud SDK, pnpm, and Firebase CLI
 
-FROM node:24-slim
+FROM node:24-trixie-slim
 
 ENV CLOUDSDK_INSTALL_DIR=/usr/local/google-cloud-sdk
 ENV PATH="$PATH:/usr/local/google-cloud-sdk/bin"
