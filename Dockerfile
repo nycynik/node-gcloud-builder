@@ -8,7 +8,7 @@ ENV PATH="$PATH:/usr/local/google-cloud-sdk/bin"
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 \
     openjdk-21-jre-headless \
-    netcat-openssl \
+    netcat-openbsd \
     ca-certificates \
     curl \
     git \
