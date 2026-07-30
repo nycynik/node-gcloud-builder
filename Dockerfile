@@ -6,6 +6,7 @@ ENV CLOUDSDK_INSTALL_DIR=/usr/local/google-cloud-sdk
 ENV PATH="$PATH:/usr/local/google-cloud-sdk/bin"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    tini \
     python3 \
     openjdk-21-jre-headless \
     netcat-openbsd \
@@ -25,5 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && firebase setup:emulators:storage \
     && firebase setup:emulators:ui \
     && rm -rf /var/lib/apt/lists/*
+
+ENTRYPOINT ["/usr/bin/tini", "--"]
 
 WORKDIR /app
